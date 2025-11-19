@@ -1,0 +1,469 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
+    list-style: none;
+}
+body{
+    background-color: white;
+    margin: 20px;
+    padding: 0px;
+    
+}
+
+nav{
+    display: flex;
+    padding: 3% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 150px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding : 8px 12px;
+    position: relative
+}
+
+.nav-links ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Navi Hover */
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 3px;
+    background: black;
+    display: block;
+    margin: auto;
+    transition: 0.4s;
+}
+.nav-links ul li:hover::after{
+    width:100%;
+}
+
+/* Home Heading */
+.text-box{
+    width:100%;
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 65px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 20px;
+    color: white;
+}
+
+/* Visit Us Button*/
+.visitus{
+    display:inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 35px;
+    font-size: 18px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 30px;
+}
+/* Visit Us  Hover */
+.visitus:hover{
+    border: 1px solid rgb(110, 5, 5);
+    background: rgb(110, 5, 5);
+    transition: 0.6s;
+}
+
+/* Hide the icon*/
+nav .fa{
+    display: none;
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .text-box p{
+        margin: 10px 0 40px;
+        font-size: 14px;
+        color: white;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: rgb(110, 5, 5);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 20px;
+    }
+}
+
+/* Search bar */
+.form-control{
+    width: 170px;
+    height: 3px;
+    border: 2px solid #7a7a7a;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+    color:black;
+}
+
+.search-content{
+    width: 160px;
+    padding: 5px;
+    border-radius: 9px;
+    border: solid thin #aaa;
+    outline: none;
+    text-align: left;
+    background: white;
+    display:none;
+}
+
+.form-control:focus + .search-content {
+    display: unset;
+    width: 100%;
+    padding: 4px;
+    border-radius: 9px;
+    border: solid thin #aaa;
+    outline: none;
+}
+
+.list-group-item{
+    text-align: left; 
+    width: 100%;
+    outline: none;
+    cursor:pointer;
+    border:none;
+    background: white;
+    font-size: 15px;
+}
+
+.list-group-item:hover{
+    background: #aaa;
+}
+
+/* Footer */
+.title{
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer{
+    display: block;
+    background-color: #f5f5f5;
+}
+
+.social_media ul{
+    display: flex;
+}  
+
+.social_media ul li{
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(to right, #ebecf0, white);
+    margin-right: 10px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
+}
+  
+.social_media ul li a{
+    color :#484848;
+    display: block;
+    font-size: 18px;
+    outline: auto;
+    border-radius: 50px;
+}
+
+.social_media a:hover{
+    color: #f5f5f5;
+	background-color: #000;
+}
+
+.member_btn .btn{
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    text-align: center;
+    border: none;
+    background: #000;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 2rem;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: #484848;
+}
+
+.line{
+    margin-bottom: 3rem;
+}
+
+/* */
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer-col{
+    padding-left: 10rem;
+}
+
+.footer-col h4{
+	margin-bottom: 0.5rem;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	text-decoration: none;
+	font-weight: 300;
+	color: #7a7a7a;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #000;
+	padding-left: 8px;
+}
+
+.inf{
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700px;
+    color: #111;
+}
+
+/* main */
+.card-wrapper{
+    max-width: 1100px;
+    margin: 50px auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 5rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+
+.lenght_info{
+    color: #484848;
+    font-weight: 14px;
+    margin-bottom: 1.25rem;
+}
+
+.product-rating{
+    color: #484848;
+}
+.product-rating span{
+    font-size: 14px;
+    color: #484848;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 1.25rem;
+    font-size: 24px;
+}
+.product-detail p{
+    font-size: 16px;
+    padding: 0rem;
+    opacity: 0.8;
+    color: #484848;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(../image/bed1.avif) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    width: 400px;
+    height: 60px;
+}
+.purchase-info input{
+    width: 120px;
+    height: 25px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:last-of-type{
+    background: #111;
+    transition: 0.3s;
+}
+.purchase-info .btn:hover{
+    transform: translateY(-5px);
+    background: #484848;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+
+.more-info{
+    margin: 1.5rem;
+}
+
+.more-info span{
+    font-size: 14px;
+    color: #484848;
+}
+
+.more-info i{
+    margin: 1.5rem ;
+    font-size: 22px;
+}
+

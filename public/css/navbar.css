@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
+    list-style: none;
+  }
+
+/* navigation */
+nav{
+  display: flex;
+  padding: 3% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img{
+  width: 150px;
+  border-radius: 7px;
+}
+
+.nav-links{
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 图标靠右排列 */
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  position: relative; /* 保留用于下拉 */
+}
+
+.nav-links ul li a{
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.1s;
+}
+
+/* Navi Hover */
+.nav-links ul li a:hover{
+  transform: translateY(-5px);
+  color: #484848;
+}
+
+/* Home Heading */
+.text-box{
+  width:100%;
+  color:white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.text-box h1{
+  font-size: 65px;
+}
+.text-box p{
+  margin: 10px 0 40px;
+  font-size: 20px;
+  color: white;
+}
+
+/* Visit Us Button*/
+.visitus{
+  display:inline-block;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 35px;
+  font-size: 18px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  border-radius: 30px;
+}
+/* Visit Us  Hover */
+.visitus:hover{
+  border: 1px solid rgb(110, 5, 5);
+  background: rgb(110, 5, 5);
+  transition: 0.6s;
+}
+
+/* Hide the icon*/
+nav .fa{
+  display: none;
+}
+
+@media(max-width: 700px){
+  .text-box h1{
+      font-size: 20px;
+  }
+  .text-box p{
+      margin: 10px 0 40px;
+      font-size: 14px;
+      color: white;
+  }
+  .nav-links ul li{
+      display: block;
+  }
+  .nav-links{
+      position: absolute;
+      background: rgb(110, 5, 5);
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+  }
+  nav .fa{
+      display: block;
+      color: white;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+  }
+  .nav-links ul{
+      padding: 20px;
+  }
+}
+
+/* Search bar */
+.form-control-nav{
+  width: 170px;
+  height: 3px;
+  border: 2px solid #7a7a7a;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  background: transparent;
+  outline: none;
+  transition: .3s;
+  color:black;
+}
+
+.search-menu{
+  width: 160px;
+  padding: 5px;
+  border-radius: 9px;
+  border: solid thin #aaa;
+  outline: none;
+  text-align: left;
+  background: white;
+  display:none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.form-control:focus + .search-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.list-group-item{
+  text-align: left; 
+  width: 100%;
+  outline: none;
+  cursor:pointer;
+  border:none;
+  background: white;
+  font-size: 15px;
+}
+
+.list-group-item:hover{
+  background: #aaa;
+}
+
+/* icon */
+.icon{
+  font-size: 20px;
+}
+
+/* profile */
+.action{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.action .profile{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.action .profile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.action .menu{
+  display: block;               /* 覆盖 display:none 的干扰 */
+  background-color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border-radius: 8px;
+  padding: 8px 0;
+  position: absolute;
+  right: 0;                     /* 右对齐 avatar */
+  top: calc(100% + 8px);
+  min-width: 160px;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+  z-index: 9999;
+}
+
+.action .menu.active{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* 小箭头对齐 */
+.action .menu::before{
+  background-color: #fff;
+  content: '';
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  right: 14px;
+  top: -6px;
+  transform: rotate(45deg);
+}
+
+/* menu 内容微调 */
+.action .menu ul{ margin: 0; padding: 8px 0; list-style: none; }
+.action .menu ul li{ padding: 8px 16px; border-top: 1px solid #eee; display: flex; align-items: center; }
+.action .menu ul li a{ color:#222; text-decoration:none; width:100%; }
+
+
+
+
+/* dropdown */
+.link{
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.dropdown.active > .link,.link:hover{
+ color: #000; 
+}
+
+.dropdown{
+  position: relative;
+}
+
+.dropdown-menu{
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.25rem);
+  background-color: #f5f5f5;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .link + .dropdown-menu{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.information-grid{
+ display: grid;
+ grid-template-columns: repeat(2, max-content);
+ gap: 2rem; 
+}
+
+.dropdown-link{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  
+}
+
+.dropdown-menu .dropdown-link .link-text{
+  color: #484848;
+  transition: 0.3s;
+  text-align: left;
+  margin: 0.25rem 0 0 0;
+}
+
+.dropdown-menu .dropdown-link .link-text:hover{
+  color: #000;
+  padding-left: 8px;
+}
+
+.dropdown-heading{
+  padding: 25px 0px 0px 0px;
+}
+
+.dropdown-heading-main{
+  position: fixed;
+  padding: 10px;
+}
+
+.fa-shopping-cart:before{
+    font-size: 1.4rem;
+}
+
+.fa-user{
+    font-size: 1.4rem;
+}
+
+.fa-truck{
+    font-size: 1.4rem;
+}

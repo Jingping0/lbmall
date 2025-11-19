@@ -1,0 +1,124 @@
+.container{
+    top: 50%;
+    left: 50%;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container-title{
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #111;
+}
+
+.user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .user-details .mb-3{
+    margin: 20px 0 12px 0;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .mb-3 .form-label{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .mb-3 .input-field{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.date_input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.form-select{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.add_product_btn{
+    width: 200px;
+    padding: 20px 20px;
+    text-align: center;
+    border: none;
+    background: #000;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    line-height: 1.3333333333;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    margin-top: 11rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.btn-groups{
+    display: flex;
+    justify-content: space-between;
+    padding: auto;
+}
+
+.edit_user_btn_group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    width: 200px;
+    padding: 20px 20px;
+    text-align: center;
+    border: none;
+    background: #000;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    line-height: 1.3333333333;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.btn:hover{
+    color: #fff;
+    background: #484848;
+}

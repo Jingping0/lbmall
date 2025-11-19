@@ -1,0 +1,258 @@
+*{
+    font-family: 'Poppins',sans-serif;
+}
+
+.container{
+    top: 50%;
+    left: 50%;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container-title{
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #111;
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .user-details .mb-3{
+    margin: 20px 0 12px 0;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .mb-3 .form-label{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .mb-3 .input-field{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.user-details .mb-3 select{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.user-details .mb-3 textarea{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.drop-zone {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    border: 2px dashed #d5d5e1;
+    color: #c8c9dd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    background: #dfe3f259;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.drop-zone:hover {
+    color: #6c5ce7;
+    border: 2px dashed #6c5ce7;
+}
+
+.sub-image{
+    justify-content: center;
+    display: flex;
+}
+
+.image-field{
+    width: 703px;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.drop-text{
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: 500;
+    top: 40%;
+    left: 35%;
+}
+
+.sub-drop-zone{
+    width: 195px;
+    height: 150px;
+    border-radius: 5px;
+    border: 2px dashed #d5d5e1;
+    color: #c8c9dd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    background: #dfe3f259;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0px 10px 10px 0px;
+    transition: .3s;
+}
+
+.sub-drop-zone:hover{
+    color: #6c5ce7;
+    border: 2px dashed #6c5ce7;
+}
+
+.sub-image-field{
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.sub-drop-text{
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: 500;
+    top: 40%;
+    left: 35%;
+}
+
+
+
+
+img{
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    margin: 0px 20px 10px 0px;
+}
+
+.add_product_btn{
+    width: 200px;
+    padding: 20px 20px;
+    text-align: center;
+    border: none;
+    background: #000;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    line-height: 1.3333333333;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    margin-top: 11rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.btn-groups{
+    display: flex;
+    justify-content: space-between;
+    padding: auto;
+}
+
+/* #image-dropzone {
+    position: relative;
+    border: 2px dashed #d5d5e1;
+    border-radius: 10px;
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+    font-size: large;
+    overflow: hidden; 
+} */
+
+/* .image-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image-label input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+} */
+
+/* .drag-area{
+    width: 500px;
+    height: 100px;
+    border-radius: 5px;
+    border: 2px dashed #d5d5e1;
+    color: #c8c9dd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    background: #dfe3f259;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    margin-top: 20px;
+    cursor: pointer;
+} */
+
+
+
+
+/* .image-label{
+    
+    
+    color: #c8c9dd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    background: #dfe3f259;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    margin-top: 20px;
+    cursor: pointer;
+} */
