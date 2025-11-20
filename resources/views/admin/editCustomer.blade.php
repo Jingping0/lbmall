@@ -1,0 +1,166 @@
+@extends('layout.admin_layout')
+
+@section('css')
+<style>
+    .main{
+        padding: 20px;
+    }
+    
+</style>
+@endsection
+
+@section('content')
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+<link rel="stylesheet" href="{{ asset('css/admin_add_user.css') }}">
+<link rel="stylesheet" href="{{ asset('css/delete.css') }}">
+
+<style>
+        .error-message {
+        color: red;
+        margin-top: 5px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="container-title">
+                <label class="title">Edit Customer</label>
+            </div>
+
+            <form method="post" action="{{ route('admin.editCustomerPost', ['user_id' => $customer->user_id]) }} "enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <div class="user-details">
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input class="input-field" type="text" id="username" name="username" value="{{ old('username', $customer->username) }}"/>
+                        @error('username')
+                            <div class="error-message">{{ $message }}</div>
+                        @enderror
+                    </div>
+    
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <div  class="input-field">
+                            <input type="password" id="password" name="password" value="{{ old('password', $customer->password) }}"/>
+                            <span class="show_button"><i class="icon-show-password fa fa-eye-slash " id="eye" onclick="toggle()"></i><span class="show_passwordText">Show password</span></span>
+                        </div>
+                        @error('password')
+                            <div class="error-message">{{ $message }}</div>
+                        @enderror
+                    </div>
+    
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input class="input-field" type="text" id="name" name="name" value="{{ old('username', $customer->name) }}"/>
+                        @error('name')
+                            <div class="error-message">{{ $message }}</div>
+                        @enderror
+                    </div>
+    
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input class="input-field" type="email" id="email" name="email" value="{{ old('email', $customer->email) }}"/>
+                        @error('email')
+                            <div class="error-message">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input class="input-field" type="number" id="phone" name="phone"  value="{{ old('email', $customer->phone) }}"/>
+                        @error('phone')
+                            <div class="error-message">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" style="display: block; font-weight: 500; margin-bottom: 5px;">Main Image</label>
+                <div class="drop-zone">
+                    @if($customer->userImage)
+                    <img src="{{ asset('storage/' . $customer->userImage) }}" alt="Old Image" style="margin-top:-10px;margin-left:100px; width:150px; height:130px;">
+                    @else
+                    <span class="drop-text">Drag and Drop your image</span>
+                    @endif
+                        <input class="image-field" type="file" id="userImage" name="userImage" value="Drag and Drop your image" accept="image/*" onchange="previewImage(this, 'mainImagePreview')" multiple/>
+                    <div id="mainImagePreview" class="image-preview"></div>
+                    @error('product_image')
+                        <div class="error-message" >{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+                    <div class="add_user_btn_group">
+                        <a href="{{ route('admin.showCustomerList') }} " class="btn btn-danger">Back</a>
+                        <button type="submit" class="btn">Edit Customer</button>
+                    </div>
+            </form>
+            
+        
+            <script>
+                tinymce.init({
+                     selector: '#txtA_content',
+                     height: 300
+                   });
+            
+            </script>
+            <script>
+                var state= false;
+                function toggle(){
+                    if(state){
+                        document.getElementById("password").setAttribute("type","password");
+                        document.getElementById("eye").setAttribute("class","icon fa fa-eye")
+                        state = false;
+                    }
+                    else{
+                        document.getElementById("password").setAttribute("type","text");
+                        document.getElementById("eye").setAttribute("class","icon fa fa-eye-slash")
+                        state = true;
+                    }
+                }
+            </script>
+           <script>
+            function previewImage(input, previewId) {
+                var preview = document.getElementById(previewId);
+                var dropZone = preview.parentElement;
+        
+                // Clear existing previews
+                while (preview.firstChild) {
+                    preview.removeChild(preview.firstChild);
+                }
+        
+                if (input.files && input.files.length > 0) {
+                    for (var i = 0; i < input.files.length; i++) {
+                        var reader = new FileReader();
+        
+                        reader.onload = function (e) {
+                            var image = document.createElement('img');
+                            // image.src = e.target.result;
+                            // image.alt = 'Image Preview';
+                            // image.style.maxWidth = '100%';
+                            // image.style.maxHeight = '150px';
+                            // preview.appendChild(image);
+        
+                            // Set the background image for the sub-drop-zone
+                            dropZone.style.backgroundImage = 'url(' + e.target.result + ')';
+                            dropZone.style.backgroundSize = 'cover';
+                            dropZone.style.backgroundPosition = 'center';
+                        };
+        
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            }
+        </script>
+            
+        </div>
+    </div>
+</div>
+@endsection

@@ -162,7 +162,7 @@
                 <div class="dropdown">
                     <div class="" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <span class="me-2">Chiang Jing Shiun</span>
+                        <span class="me-2">{{ auth()->user()?->name }}</span>
                         <img class="img-profile rounded-circle" style="max-width: 50px; max-height: 50px" src="{{ asset('img//adminProfile.png') }}">
                     </div>
                     

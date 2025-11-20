@@ -50,15 +50,7 @@ class CustomerController extends Controller
         ],[
             'password.regex' => 'Minimum eight characters, at least one letter, one number and one special character',
         ]);
-       
-        // $request->validate([
-        //     'username'  => 'required',
-        //     'password'  => 'required',
-        //     'name'      => 'required',
-        //     'email'     => 'required',
-        //     'phone'     => 'required',
-        //     // 'userImage' => 'required',
-        // ]);
+    
 
         $customerData = [
             'username'  => $request->username,
@@ -97,23 +89,14 @@ class CustomerController extends Controller
     public function editCustomerPost(Request $request, $id)
     {
         
-        //validate the input
-        // $request->validate([
-        //     'username'  =>'required',
-        //     'password'  =>'required',
-        //     'name'      =>'required',
-        //     'email'     =>'required',
-        //     'phone'     =>'required',
-        //     'userImage' => ['required','file','mimes:jpg,png,jpeg'],  
-        // ]);
-        
+       
         // //validate the input
         $request->validate([
             'username'  => ['required', 'string'],
             'password'  => ['required'],
             'name'      => ['required', 'max:255'],
             'email'     => ['required', 'string', 'email'],
-            'phone'     => ['required', 'regex:/^01[0-9]{8}$/'], 
+            'phone'     => ['required', 'regex:/^01[0-9]{8,9}$/'], 
         'userImage' => ['file','mimes:jpg,png,jpeg'],  
         ]);
         

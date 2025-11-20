@@ -76,17 +76,20 @@
                     <li>
                         <div class="action">
                             <div class="profile" onclick="menuToggle();">
-                                @php
-                                    $user = auth()->user();
-                                    $userImage = $user ? $user->userImage : null;
-                                    $ver = $user && isset($user->updated_at) ? $user->updated_at->timestamp : time();
+                               
+                           @php
+                                $user = auth()->user();
+                                $userImage = $user?->userImage ? ltrim($user->userImage, '/') : null;
+
+                                
+                                $path = $userImage ? storage_path('app/public/'.$userImage) : null;
+
+                                $ver = $path && file_exists($path) ? filemtime($path) : time();
+                                
+
                                 @endphp
 
-                                <img class="img" alt="user" width="100"
-                                     src="{{ $userImage && file_exists(public_path('storage/'.$userImage))
-                                            ? asset('storage/'.$userImage) . '?v=' . $ver
-                                            : asset('img/user.png') }}">
-
+                                <img class="img" alt="user" width="100" src="{{ $userImage && file_exists($path) ? asset('storage/'.$userImage) . '?v=' . $ver : asset('img/user.png') }}">
                             </div>
 
                             <div class="menu">
