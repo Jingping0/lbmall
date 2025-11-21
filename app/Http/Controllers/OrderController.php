@@ -342,13 +342,16 @@ class OrderController extends Controller
     public function addDelivery(Request $request)
     {
         $customer = $this->getCurrentCustomer();
-
         
         $order = Order::latest()->first();
         $lastDelivery = Delivery::orderBy('delivery_id', 'desc')->first();
-        $newDeliveryId = $lastDelivery->delivery_id + 1;
 
-      
+         if($lastDelivery){
+              $newDeliveryId = $lastDelivery->delivery_id + 1;
+        }else{
+              $newDeliveryId = 1;
+        }
+  
         $delivery = Delivery::create([
             'delivery_id'   => $newDeliveryId,
             'order_id'   => $order->order_id,
