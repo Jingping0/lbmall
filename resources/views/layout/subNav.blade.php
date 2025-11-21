@@ -45,7 +45,20 @@
                     <li>
                         <div class="action">
                             <div class="profile" onclick="menuToggle();">
-                                <img src="{{ asset('img/adminProfile.png') }}">
+                                @php
+                                $user = auth()->user();
+
+                                $customer = $user?->customer;
+
+                                $userImage = $customer?->userImage?ltrim($customer->userImage,'/'):null;
+
+                                $path = $userImage?storage_path('app/public/' . $userImage):null;
+                                
+                                $ver = $path && file_exists($path) ? filemtime($path) : time();
+
+                                @endphp
+
+                                <img class="img" alt="user" width="100" src="{{ $userImage && file_exists($path) ? asset('storage/'.$userImage) . '?v=' . $ver : asset('img/user.png') }}">
                             </div>
 
                             <div class="menu">

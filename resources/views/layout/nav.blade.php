@@ -79,13 +79,14 @@
                                
                            @php
                                 $user = auth()->user();
-                                $userImage = $user?->userImage ? ltrim($user->userImage, '/') : null;
 
+                                $customer = $user?->customer;
+
+                                $userImage = $customer?->userImage?ltrim($customer->userImage,'/'):null;
+
+                                $path = $userImage?storage_path('app/public/' . $userImage):null;
                                 
-                                $path = $userImage ? storage_path('app/public/'.$userImage) : null;
-
                                 $ver = $path && file_exists($path) ? filemtime($path) : time();
-                                
 
                                 @endphp
 

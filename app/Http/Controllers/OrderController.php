@@ -181,7 +181,12 @@ class OrderController extends Controller
         $customer = $this->getCurrentCustomer();
 
         $lastOrder = Order::orderBy('order_id', 'desc')->first();
-        $newOrderId = $lastOrder->order_id + 1;
+
+        if($lastOrder){
+              $newOrderId = $lastOrder->order_id + 1;
+        }else{
+              $newOrderId = 1;
+        }
 
         $orderItems = [];
         foreach ($customer->cart->cartItems as $cartItem) {

@@ -97,39 +97,7 @@
     
                         <li><div class="dropdown" data-dropdown>
                             <a href="{{ route('product_items.index') }}">PRODUCT</a>
-                                <!-- <button class="link" data-dropdown-button>Product</button>
-                                <div class="dropdown-menu information-grid">
-    
-                                    <div class="dropdown-heading-main">
-                                        <a href="Getproduct_filter"><strong>All Product</strong></a>
-                                    </div>
-    
-    
-                                    <div>
-                                        <div class="dropdown-heading">Bed room</div>
-                                        <div class="dropdown-link">
-                                            <a href="category/bedpage.html" class="link-text">Bed</a>
-                                            <a href="category/tablepage.html" class="link-text">Table</a>
-                                        </div>
-                                    </div>
-    
-                                    <div>
-                                        <div class="dropdown-heading">Home office</div>
-                                        <div class="dropdown-link">
-                                            <a href="category/tablepage.html" class="link-text">Table</a>
-                                            <a href="#" class="link-text">Chair</a>
-                                        </div>
-                                    </div>
-    
-                                    <div>
-                                        <div class="dropdown-heading">Both room</div>
-                                        <div class="dropdown-link">
-                                            <a href="#" class="link-text">Mirror</a>
-                                        </div>
-                                    </div>
-    
-                                </div>
-                            </div> -->
+                               
                         </li>
                         <li><a href="{{ route('about_us') }}">ABOUT US</a></li>
                         <li><a href="{{ route('contact') }}">CONTACT US</a></li>
@@ -146,7 +114,20 @@
                         <li>
                             <div class="action">
                                 <div class="profile" onclick="menuToggle();">
-                                    <img src="img/user.png">
+                                    @php
+                                $user = auth()->user();
+
+                                $customer = $user?->customer;
+
+                                $userImage = $customer?->userImage?ltrim($customer->userImage,'/'):null;
+
+                                $path = $userImage?storage_path('app/public/' . $userImage):null;
+                                
+                                $ver = $path && file_exists($path) ? filemtime($path) : time();
+
+                                @endphp
+
+                                <img class="img" alt="user" width="100" src="{{ $userImage && file_exists($path) ? asset('storage/'.$userImage) . '?v=' . $ver : asset('img/user.png') }}">
                                 </div>
     
                                 <div class="menu">
@@ -247,13 +228,13 @@
                                 <span>
                                     <ion-icon name="location-outline"></ion-icon>
                                 </span>
-                                <p>2, Jalan PJU 7/2, Mutiara Damansara, 47800 Petaling Jaya, Selangor</p>
+                                <p>13A-D, Holiday Villa, Megan Ambassy, Jln Ampang, Taman U Thant, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
                             </div>
                             <div>
                                 <span>
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </span>
-                                <a href="mailto:chiangjinghan@gmail.com">yeekia@gmail.com</a>
+                                <a href="mailto:jingpingchiang@gmail.com">lb@gmail.com</a>
                             </div>
                             <div>
                                 <span>
@@ -284,7 +265,7 @@
                     </div>
                     <div class="contact map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.7672578544875!2d101.61133350000001!3d3.1559622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f92c5aaca75%3A0x23ff9ad0a4342afc!2sIKEA%20Damansara!5e0!3m2!1sen!2smy!4v1660959418816!5m2!1sen!2smy"
+                            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d127477.994299975!2d101.57176388192019!3d3.176744621371769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x31cc4e81e4ea9b6f%3A0x95d0b7303d406a0b!2sEzyOffice%20(Ezy%20%26%20Associates%20Sdn.%20Bhd.)!3m2!1d3.1546195!2d101.594087!5e0!3m2!1sen!2smy!4v1763715328754!5m2!1sen!2smy"
                             style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
