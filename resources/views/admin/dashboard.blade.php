@@ -152,12 +152,7 @@
                                 <div class="d-flex">
                                     <div class="flex-1 overflow-hidden">
                                         <p class="text-truncate font-size-14 mb-2">Average Price</p>
-
-                                        @php
-                                            $averagePrice = $totalOrders > 0 ? $totalRevenue / $totalOrders : 0;
-                                        @endphp
-
-                                        <h4 class="mb-0">RM {{ number_format($averagePrice, 2) }}</h4>
+                                        <h4 class="mb-0">RM {{ number_format($totalRevenue / $totalOrders, 2) }}</h4>
                                     </div>
                                     <div class="text-primary ms-auto">
                                         <i class='bx bx-briefcase-alt-2 font-size-24'></i>
@@ -194,7 +189,7 @@
                                 <div class="mt-4 mt-sm-0">
                                     <p class="mb-2 text-muted text-truncate"><i class="bx bxs-circle text-primary font-size-10 me-1"></i> This Month :</p>
                                     <div class="d-inline-flex">
-                                        <h5 class="mb-0 me-2">RM {{ $thisMonthAmount }}</h5>
+                                        <h5 class="mb-0 me-2">RM {{ $thisMonth }}</h5>
                                         <div class="text-success">
                                             <i class="mdi mdi-menu-up font-size-14"> </i>2.1 %
                                         </div>
