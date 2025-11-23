@@ -146,6 +146,7 @@
                     </ul>
                 </div>
             </nav>
+
             <div class="contactUs">
                 <div class="title">
                     <h2 class="contact_title">Contact Us</h2>
@@ -201,12 +202,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-                                
-                                    {{-- <div class="inputBox">
-                                        <input type="file" id="cust_service_image" name="cust_service_image" id="cust_service_image">
-                                    </div> --}}
                                     
                                 </div>
                         
@@ -276,9 +271,6 @@
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
             <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <!--MAP-->
-        {{-- <div class="map">
-            <h1 style="color:#ADADC9;">TARUC CAMPUS's Google Map</h1>
-        </div> --}}
         <div class="border"></div>
         <div id="mapid"></div>
         <script>

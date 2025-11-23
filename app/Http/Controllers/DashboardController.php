@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function     index()
 {
     $orders = Order::all();
     $totalOrders = Order::count();
@@ -55,11 +55,11 @@ class DashboardController extends Controller
     $payments = Payment::all();
 
     $paymentMethodNames = [
-        '53201' => 'Paypal',
-        '53202' => 'Cash',
-        '53203' => 'Online Banking',
-        '53204' => 'E-Wallet',
-        '53205' => 'Credit Card',
+        '53201' => 'Cash',
+        '53202' => 'Online Banking',
+        '53203' => 'E-Wallet',
+        '53204' => 'Credit Card',
+        '53205' => 'Paypal',
     ];
 
     // Initialize counts

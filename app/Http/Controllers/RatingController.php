@@ -31,7 +31,6 @@ class RatingController extends Controller
             ->where('product_item_id', $product_item_id)
             ->latest('created_at') 
             ->first();
-            
 
     
         // Pass the retrieved data to the view
@@ -48,7 +47,8 @@ class RatingController extends Controller
             'rating_image'      => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
     
-        $rating = Rating::find($rating_id);
+        $rating = Rating::find($rating_id); 
+
         $rating->rating_value = $request->rating_value;
         $rating->rating_comment = $request->rating_comment;
         $rating->rating_status = 'rate';
