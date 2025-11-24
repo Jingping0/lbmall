@@ -71,11 +71,11 @@
             <div class="search-container">
                 <select id="categoryFilter" class="form-select search-select" aria-label="Default select example">
                     <option value="">All</option>
-                    <option value="9001">Table</option>
-                    <option value="9002">Chair</option>
-                    <option value="9003">Wardrobe</option>
-                    <option value="9004">Bed</option>
-                    <option value="9005">Curtain</option>
+                    <option value="9001">Materials</option>
+                    <option value="9002">Panels & Surface Finishes</option>
+                    <option value="9003">Hardware & Tools</option>
+                    <option value="9004">Coatings & Chemicals</option>
+                    <option value="9005">Plumbing & Electrical</option>
                 </select>
 
                 <form id="searchForm" action="#" method="post">

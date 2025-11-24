@@ -26,9 +26,9 @@ class PusherBroadcast implements ShouldBroadcast
      *
      * @return array<int, \Illuminate\Broadcasting\Channel>
      */
-    public function broadcastOn(): array
+    public function broadcastOn()
     {
-        return ['public'];
+        return new Channel('public');
     }
 
     public function broadcastAs(): string

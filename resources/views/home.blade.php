@@ -8,32 +8,31 @@
 
    
     <!--- Welcome --->
-    <h1 class="welcome">Welcome User</h1>
-    <p class="welcome_a">to YEEKIA</p>
+    <h1 class="welcome">Welcome {{auth()->user()->username}}</h1>
+    <p class="welcome_a">to LBMALL</p>
 
     <!---  --->
     <div class="pub_container">
-        <h2 class="pub_h2">Bookcases and shelves for organised home</h2>
+        <h2 class="pub_h2">Building Materials and Solutions for a More Efficient Project</h2>
     </div>
-    <p class="inf">Some of the things at home we love to see every day and display. Other are better off hidden while we don’t use them.<br>
-        No matter what kind of bookshelves or shelves you’re looking for, we’re sure that we can help you out with smart<br>
-        solutions for every need.</p>
+    <p class="inf">On every construction site, some materials are best kept easily accessible for everyday use, while others are better stored safely and organized until needed.<br>
+        Whether you’re looking for basic construction materials, decorative finishes, or professional engineering products, we provide smart, efficient, and tailored purchasing and management solutions. Start your project with well-organized materials that save time, labor, and cost.</p>
 
 
     <!--- Home --->
     <div class="pub_container">
-        <h2 class="pub_h2">Shop products for a more sustainable home</h2>
+        <h2 class="pub_h2">Shop materials for more sustainable and efficient construction</h2>
     </div>
     <!---------carsousel---------->
     <div class="main-carousel">
-        <div class="cell"><img src="img/img1.avif"></div>
-        <div class="cell"><img src="img/img1.avif"></div>
-        <div class="cell"><img src="img/img2.jpg"></div>
-        <div class="cell"><img src="img/img3.avif"></div></a>
-        <div class="cell"><img src="img/img4.avif"></div>
-        <div class="cell"><img src="img/img5.avif"></div>
-        <div class="cell"><img src="img/img6.avif"></div></a>
-        <div class="cell"><img src="img/img7.avif"></div>
+        <div class="cell"><img src="img/img1.png"></div>
+        <div class="cell"><img src="img/img2.jpeg"></div></a>
+        <div class="cell"><img src="img/img3.jpg"></div>
+        <div class="cell"><img src="img/img4.jpg"></div>
+        <div class="cell"><img src="img/img5.jpg"></div>
+        <div class="cell"><img src="img/img6.jpg"></div>
+        <div class="cell"><img src="img/img7.jpg"></div>
+        <div class="cell"><img src="img/img8.jpg"></div>   
     </div>
 
 
@@ -48,35 +47,16 @@
     </script>
 
     <div class="pub_container2">
-        <h2 class="pub_h2">Storage for the little one</h2>
+        <h2 class="pub_h2">Storage solutions specifically designed to meet your project needs</h2>
     </div>
-    <p class="inf">We may want them to stay small forever, but children grow up anyway – fast! We believe kid’s storage<br>
-        should keep up. Our children’s storage is made to be used for years</p>
-    <div><img class="pub_store" src="img/store.avif"></div>
-
-
-    <div class="pub_container2">
-        <h2 class="pub_h2">Shop home furniture and accessories</h2>
+    <p class="inf">We understand that demands on construction sites change rapidly<br>
+        Materials, tools, and equipment come and go, and your storage must keep pace.<br>
+        Our durable, efficient, and practical construction storage solutions meet your project's requirements.
+    </p>
+    <div><img class="pub_store" src="img/material.webp"></div>
     </div>
     <!---------carsousel 2---------->
-    <div class="main-carousel">
-        <div class="cell">
-            <a href="{{ route('bed_category') }}">
-                <img src="{{ asset('img/image1.avif') }}">
-            </a>
-        </div>
-        <a href="{{ route('table_category') }}">
-            <div class="cell"><img src="{{ asset('img/image2.avif') }}"></div>
-        </a>
-        <div class="cell"><img src="img/image3.avif"></div>
-        <div class="cell"><img src="img/image4.avif"></div></a>
-        <div class="cell"><img src="img/image5.avif"></div>
-        <div class="cell"><img src="img/image6.avif"></div>
-        <div class="cell"><img src="img/image7.avif"></div>
-        <div class="cell"><img src="img/image8.webp"></div>
-        <div class="cell"><img src="img/image9.avif"></div>
-        <div class="cell"><img src="img/image10.avif"></div>
-    </div>
+   
 
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
@@ -95,75 +75,57 @@
 
 <div class="container">
 
-    <div class="gallery-container w-3 h-2">
+    <div class="gallery-container w-3 h-3">
         <div class="gallery-item">
             <div class="image">
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://source.unsplash.com/1600x900/?Mirror" alt="Mirror"></a>
+                <a href="http://127.0.0.1:8000/product_items?category=9001"><img src="img/materials.webp" alt="Materials"></a>
             </div>
-            <div class="text">Mirror</div>
+            <div class="text">Materials</div>
         </div>
     </div>
 
     <div class="gallery-container w-3 h-3">
         <div class="gallery-item">
             <div class="image">
-                <img src="https://source.unsplash.com/1600x900/?wardrobe" alt="wardrobe">
+                <a href="http://127.0.0.1:8000/product_items?category=9002"><img src="img/panel.png" alt="Panels & Surface Finishes"></a>
             </div>
-            <div class="text">wardrobe</div>
-        </div>
-    </div>
-
-    <div class="gallery-container h-2">
-        <div class="gallery-item">
-            <div class="image">
-                <img src="https://source.unsplash.com/1600x900/?bed" alt="bed"></a>
-            </div>
-            <div class="text">bed</div>
-        </div>
-    </div>
-
-    <div class="gallery-container w-2 h-1">
-        <div class="gallery-item">
-            <div class="image">
-                <img src="https://source.unsplash.com/1600x900/?dinnerware" alt="tableware">
-            </div>
-            <div class="text">tableware</div>
-        </div>
-    </div>
-
-    <div class="gallery-container w-4 h-1">
-        <div class="gallery-item">
-            <div class="image">
-                <img src="https://source.unsplash.com/1600x900/?mirror" alt="sofa">
-            </div>
-            <div class="text">sofa</div>
-        </div>
-    </div>
-
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <div class="image">
-                <img src="https://source.unsplash.com/1600x900/?swiver chair" alt="chair">
-            </div>
-            <div class="text">chair</div>
-        </div>
-    </div>
-
-    <div class="gallery-container w-4 h-2">
-        <div class="gallery-item">
-            <div class="image">
-                <img src="https://source.unsplash.com/1600x900/?table" alt="table"></a>
-            </div>
-            <div class="text">table</div>
+            <div class="text">Panels & Surface Finishes</div>
         </div>
     </div>
 
     <div class="gallery-container w-2 h-2">
         <div class="gallery-item">
             <div class="image">
-                <img src="https://source.unsplash.com/1600x900/?plant pot" alt="plant pot">
+                <img src="img/hardware.webp" alt="Hardware & Tools"></a>
             </div>
-            <div class="text">plant pot</div>
+            <div class="text">Hardware & Tools</div>
+        </div>
+    </div>
+
+    <div class="gallery-container w-2 h-2">
+        <div class="gallery-item">
+            <div class="image">
+                <img src="img/coat.jpg" alt="Coatings & Chemicals">
+            </div>
+            <div class="text">Coatings & Chemicals</div>
+        </div>
+    </div>
+
+    <div class="gallery-container w-2 h-1">
+        <div class="gallery-item">
+            <div class="image">
+                <img src="img/plumb.jpg" alt="Plumbing & Electrical">
+            </div>
+            <div class="text">Plumbing & Electrical</div>
+        </div>
+    </div>
+
+    <div class="gallery-container w-2">
+        <div class="gallery-item">
+            <div class="image">
+                <img src="img/other.webp" alt="chair">
+            </div>
+            <div class="text">others</div>
         </div>
     </div>
 

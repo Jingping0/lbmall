@@ -47,8 +47,8 @@ margin-bottom: 1.25rem;
   justify-content: space-between;
 }
 .items a{
-  padding: 0.7rem 24px;
-  font-size: 18px;
+  padding: 0.7rem 7px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   color: #111111;

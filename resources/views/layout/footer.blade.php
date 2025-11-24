@@ -9,9 +9,9 @@
                 <div class="row">
                     <div class="">
                         
-                        <h4>YEEKIA Family</h4>
+                        <h4>LB Family</h4>
                         <ul>
-                            <p class="inf">Some clubs are for the select few, but YEEKIA<br>
+                            <p class="inf">Some clubs are for the select few, but LB<br>
                                 Family is for everyone. Become a Family<br> 
                                 member and enjoy rewards, discounts,<br> 
                                 inspirations and a few surprises all year<br> 
@@ -24,7 +24,7 @@
                     </div>
         
                     <div class="footer-col">
-                        <h4>Shop at YEEKIA</h4>
+                        <h4>Shop at LB</h4>
                         <ul>
                             <li><a href="#">Product offers</a></li>
                             <li><a href="#">New products</a></li>
@@ -44,11 +44,11 @@
                     </div>
         
                     <div class="footer-col">
-                        <h4>This is YEEKIA</h4>
+                        <h4>This is LB</h4>
                         <ul>
                             <li><a href="#">About us</a></li>
-                            <li><a href="#">YEEKIA Family</a></li>
-                            <li><a href="#">YEEKIA for Business</a></li>
+                            <li><a href="#">LB Family</a></li>
+                            <li><a href="#">LB for Business</a></li>
                             <li><a href="#">Catalogues & everyday</a></li>
                         </ul>
                     </div>
@@ -77,7 +77,7 @@
             <hr class="line">
         
             <p class="inf">
-                © Inter YeeKia Systems B.V. 2022-2022
+                © Inter Lb Systems B.V. 2022-2022
             </p>
         
             <p class="inf">Karyuuno Tekken Sdn. Bhd. (Company Registration No. 101010101010 (1326497-A))</p>

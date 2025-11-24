@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Events\PusherBroadcast;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Log;
+
 
 class PusherController extends Controller
 {
@@ -14,13 +17,14 @@ class PusherController extends Controller
 
     public function broadcast(Request $request)
     {
-        broadcast(new PusherBroadcast($request->get('message')))->toOthers();
+        Log::info('Broadcast message: '.$request->message);
 
-        return view('broadcast',['message' => $request->get('message')]);
+        broadcast(new PusherBroadcast($request->message));
+
+        return view('broadcast',['message' => $request->message])->render();
     }
 
     public function receive(Request $request)
     {
-        return view('receive',['message' => $request->get('message')]);
-    }
+        return view('receive',['message' => $request->message])->render();
 }

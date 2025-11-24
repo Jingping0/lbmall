@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>YEEKIA | Home</title>
+        <title>LB | Home</title>
         <link rel="icon" href="{{ asset('img/small_logo.png') }}">
         <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">

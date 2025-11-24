@@ -87,7 +87,7 @@
     <body>
         <div class="content">
             <div class="wrapper">
-                <h1 class="text-title">YEEKIA Products</h1>
+                <h1 class="text-title">LB Products</h1>
                 <!-- filter Items -->
                <nav>
                     <ul class="items">

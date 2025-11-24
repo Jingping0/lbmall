@@ -6,7 +6,7 @@
         <link rel="icon" href="image/small_logo.png">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ asset('css/log_reg.css') }}">
-        <title>Yeekia | Login</title>
+        <title>Lb | Login</title>
     </head>
     <body>
         <div class="container">

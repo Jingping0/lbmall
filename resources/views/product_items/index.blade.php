@@ -5,7 +5,7 @@
     @include('layout.subNav')
 
     @if (!isset(auth()->user()->user_id))
-    <h1 class="text-title" style="margin-left: 50px;">YEEKIA Products</h1>
+    <h1 class="text-title" style="margin-left: 50px;">LB Products</h1>
     <div class="alert alert-secondary" role="alert" style="margin-left: 50px;">
         Please login to continue, 
         <a href="{{ route('login') }}" class="text-right font-weight-bold">Click here</a>
@@ -22,7 +22,7 @@
                 
             
             <div class="wrapper">
-                <h1 class="text-title">YEEKIA Products</h1>
+                <h1 class="text-title">LB Products</h1>
                 <!-- filter Items -->
                 <nav>
                     <div class="items">
