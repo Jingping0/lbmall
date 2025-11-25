@@ -10,15 +10,16 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class PusherBroadcast implements ShouldBroadcast
+class ChatMessageEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public string $message;
-
-    public function __construct(string $message)
+    /**
+     * Create a new event instance.
+     */
+    public function __construct(public string $message,public string $user)
     {
-        $this->message = $message;
+        
     }
 
     /**
@@ -26,13 +27,13 @@ class PusherBroadcast implements ShouldBroadcast
      *
      * @return array<int, \Illuminate\Broadcasting\Channel>
      */
-    public function broadcastOn(): array
+    public function broadcastOn()
     {
-        return ['public'];
+       return new Channel('chat-room');
     }
 
-    public function broadcastAs(): string
+    public function broadcastAs()
     {
-        return 'chat';
+        return 'new-message';
     }
 }

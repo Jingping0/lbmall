@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductItemController;
 use App\Http\Controllers\CustomerServiceController;
 use App\Http\Controllers\ReturnAndRefundController;
+use App\Http\Controllers\ChatController;
 
 Route::resource('users', UserController::class);
 Route::resource('customers', CustomerController::class);
@@ -195,6 +196,8 @@ Route::put('/editCustomerService/{cust_service_id}',[CustomerServiceController::
 Route::get('/',[PusherController::class,'index'])->name('pusher.index');
 Route::post('/broadcast',[PusherController::class,'broadcast'])->name('pusher.broadcast');
 Route::post('/receive',[PusherController::class,'receive'])->name('pusher.receive');
+
+Route::post('/send-message', [ChatController::class, 'send']);
 
 
 ///////////////////////// Dashboard //////////////////////////////////
