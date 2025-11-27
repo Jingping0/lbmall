@@ -57,12 +57,13 @@
                         <label class="form-label">Category</label>
                         <select class="form-select" id="category_id" name="category_id">
                             <option value="" selected disabled>Select the Category</option>
-                            <option value="9001" @if(old('category_id') == '9001') selected @endif>Table</option>
-                            <option value="9002" @if(old('category_id') == '9002') selected @endif>Chair</option>
-                            <option value="9003" @if(old('category_id') == '9003') selected @endif>Wardrode</option>
-                            <option value="9004" @if(old('category_id') == '9004') selected @endif>Bed</option>
-                            <option value="9005" @if(old('category_id') == '9005') selected @endif>Curtain</option>
-                            <!-- Add more options as needed -->
+
+                            @foreach($categories as $cat)
+                                <option value="{{ $cat->category_id }}"
+                                    @if(old('category_id') == $cat->category_id) selected @endif>
+                                    {{ $cat->category_name }}
+                                </option>
+                            @endforeach
                         </select>
                         @error('category_id')
                             <div class="error-message">{{ $message }}</div>

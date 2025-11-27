@@ -113,15 +113,17 @@
                 <td>RM {{ number_format($productItem->product_price, 2) }}</td>
                 <td>
                     @if ($productItem->category_id == 9001)
-                        Table
+                        Materials
                     @elseif ($productItem->category_id == 9002)
-                        Chair
+                        Panels & Surface Finishes
                     @elseif ($productItem->category_id == 9003)
-                        Wardrobe
+                        Hardware & Tools
                     @elseif ($productItem->category_id == 9004)
-                        Bed
+                        Coatings & Chemicals
                     @elseif ($productItem->category_id == 9005)
-                        Curtain
+                        Plumbing & Electrical
+                    @elseif ($productItem->category_id == 9006)
+                        Others
                     @else
                         Unknown Category
                     @endif

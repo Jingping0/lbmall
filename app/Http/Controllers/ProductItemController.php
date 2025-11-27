@@ -11,6 +11,7 @@ use App\Facades\ProductItemFacade;
 use Illuminate\Routing\Controller; 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class ProductItemController extends Controller
 {
@@ -69,8 +70,15 @@ class ProductItemController extends Controller
         return view('product_items.create', compact('categories'));
     }
 
-    function createProductItem(){
-        return view("product_items.createProductItem");
+    public function createProductItem()
+    {
+        // 从 categories 表读取 id 和 name
+        $categories = DB::table('categories')
+            ->select('category_id', 'category_name')
+            ->orderBy('category_name')
+            ->get();
+
+        return view('product_items.createProductItem', compact('categories'));
     }
 
     public function createProductItemPost(Request $request)
@@ -264,4 +272,3 @@ class ProductItemController extends Controller
         return view('product_items.productList', compact('productItems'));
     }
 }
-    

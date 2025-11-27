@@ -164,7 +164,9 @@
                     </div>
                 </div>
                 
-                <form action="{{ route('ratings.updateRatingPost',['rating_id' => $rating->rating_id]) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ $rating
+      ? route('ratings.updateRatingPost', ['rating_id' => optional($rating)->rating_id])
+      : route('ratings.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="rating_star_container">
                         <label class="rating_product_reason_name">Product Quality</label>

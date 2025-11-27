@@ -96,7 +96,7 @@
     <div class="gallery-container w-2 h-2">
         <div class="gallery-item">
             <div class="image">
-                <img src="img/hardware.webp" alt="Hardware & Tools"></a>
+                <a href="http://127.0.0.1:8000/product_items?category=9003"><img src="img/hardware.webp" alt="Hardware & Tools"></a>
             </div>
             <div class="text">Hardware & Tools</div>
         </div>
@@ -105,7 +105,7 @@
     <div class="gallery-container w-2 h-2">
         <div class="gallery-item">
             <div class="image">
-                <img src="img/coat.jpg" alt="Coatings & Chemicals">
+                <a href="http://127.0.0.1:8000/product_items?category=9004"><img src="img/coat.jpg" alt="Coatings & Chemicals"></a>
             </div>
             <div class="text">Coatings & Chemicals</div>
         </div>
@@ -114,7 +114,7 @@
     <div class="gallery-container w-2 h-1">
         <div class="gallery-item">
             <div class="image">
-                <img src="img/plumb.jpg" alt="Plumbing & Electrical">
+                <a href="http://127.0.0.1:8000/product_items?category=9005"><img src="img/plumb.jpg" alt="Plumbing & Electrical">></a>
             </div>
             <div class="text">Plumbing & Electrical</div>
         </div>
@@ -123,7 +123,7 @@
     <div class="gallery-container w-2">
         <div class="gallery-item">
             <div class="image">
-                <img src="img/other.webp" alt="chair">
+                <a href="http://127.0.0.1:8000/product_items?category=9006"><img src="img/other.webp" alt="Other"></a>
             </div>
             <div class="text">others</div>
         </div>
