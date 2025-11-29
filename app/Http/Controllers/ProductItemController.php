@@ -261,6 +261,7 @@ class ProductItemController extends Controller
         {
             abort(404);
         }
+        $productItem->increment ('click_count');
 
         return view('product_Items.productDetails',['productItem' => $productItem]);
     }

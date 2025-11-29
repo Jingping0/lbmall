@@ -13,9 +13,6 @@ use Illuminate\Routing\Controller;
 class CartController extends Controller
 {
 
-
-
-
     public function index()
     {
         $customer = Customer::where('user_id', auth()->user()->user_id)->first();
@@ -48,6 +45,10 @@ class CartController extends Controller
                 'quantity'     => 1,
             ]);
         }
+
+        $productItem->cart_count += 1;
+        $productItem->save();
+
         $cart = Cart::find($customer->cart->cart_id);
         $this->updated($cart);
 

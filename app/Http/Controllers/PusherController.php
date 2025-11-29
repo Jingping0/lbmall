@@ -14,13 +14,21 @@ class PusherController extends Controller
 
     public function broadcast(Request $request)
     {
-        broadcast(new PusherBroadcast($request->get('message')))->toOthers();
+        $message = $request->get('message');
 
-        return view('broadcast',['message' => $request->get('message')]);
+        event(new PusherBroadcast($message));
+
+        return response()->json(['status' => 'ok']);
     }
 
     public function receive(Request $request)
     {
-        return view('receive',['message' => $request->get('message')]);
+        return view('receive', ['message' => $request->get('message')]);
+    }
+
+    public function send(Request $request)
+    {
+        event(new PusherBroadcast($request->message));
+        return ['sent' => true];
     }
 }

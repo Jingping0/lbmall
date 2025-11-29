@@ -75,4 +75,8 @@ class ProductItem extends Model
         return $this->hasMany(Rating::class,'product_item_id');
     }
 
+    public function getPopularityScoreAttribute(){
+        return ($this->click_count * 1) + ($this->cart_count * 3);
+    }
+
 }

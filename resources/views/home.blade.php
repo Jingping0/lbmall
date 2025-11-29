@@ -19,6 +19,24 @@
         Whether you’re looking for basic construction materials, decorative finishes, or professional engineering products, we provide smart, efficient, and tailored purchasing and management solutions. Start your project with well-organized materials that save time, labor, and cost.</p>
 
 
+<div class="pub_container2">
+    <h2 class="pub_h2">Trending / Popular Materials</h2>
+</div>
+
+<div class="carousel js-flickity"
+     data-flickity='{ "wrapAround": true, "autoPlay": 2500, "pauseAutoPlayOnHover": true }'>
+   
+     @foreach($popularProducts as $product)
+        <div class="cell">
+            <img src="{{ asset('storage/'.$product->product_image) }}" alt="image">
+            <p>{{ $product->product_name }}</p>
+            <p>RM {{ number_format($product->product_price, 2) }}</p>
+
+            <small>🔥 Popularity: {{ $product->popularity_score }}</small>
+        </div>
+    @endforeach
+</div>
+
     <!--- Home --->
     <div class="pub_container">
         <h2 class="pub_h2">Shop materials for more sustainable and efficient construction</h2>
@@ -153,7 +171,7 @@
     $(document).ready (function(){
     $('#search').keyup(function(){
     var search = $('#search').val();
-    if (search !== " && search !==null)
+    if (search !== "" && search !==null)
     {
     $.ajax({
     type: 'POST',

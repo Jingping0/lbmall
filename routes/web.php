@@ -19,19 +19,20 @@ use App\Http\Controllers\ProductItemController;
 use App\Http\Controllers\CustomerServiceController;
 use App\Http\Controllers\ReturnAndRefundController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Broadcast;
 
 Route::resource('users', UserController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('address', AddressController::class);
 Route::resource('delivery', DeliveryController::class);
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+
+// Route::get('/home', function () {
+//     return view('home');
+// })->name('home');
 
 Route::get('/about_us', function () {
     return view('about_us');
@@ -193,11 +194,13 @@ Route::put('/editCustomerService/{cust_service_id}',[CustomerServiceController::
 
 
 ///////////////////// LiveChat ///////////////////////////
-Route::get('/',[PusherController::class,'index'])->name('pusher.index');
+Route::get('/liveChat',[PusherController::class,'index'])->name('pusher.index');
 Route::post('/broadcast',[PusherController::class,'broadcast'])->name('pusher.broadcast');
 Route::post('/receive',[PusherController::class,'receive'])->name('pusher.receive');
 
-Route::post('/send-message', [ChatController::class, 'send']);
+Route::get('/chat', [PusherController::class, 'index']);
+Route::post('/chat/send', [PusherController::class, 'send']);
+
 
 
 ///////////////////////// Dashboard //////////////////////////////////
