@@ -35,8 +35,7 @@ class ReturnAndRefundController extends Controller
 
         ]);
 
-        $lastReturn = ReturnAndRefund::orderBy('returnAndRefund_id', 'desc')->first();
-        $newReturnId = $lastReturn->returnAndRefund_id + 1;
+        
 
         $order_id = $request->input('order_id');
         
@@ -48,7 +47,7 @@ class ReturnAndRefundController extends Controller
         $evidenceImage = $request->file('evidence')->store('img', 'public');
 
         $returnAndRefund = new ReturnAndRefund([
-            'returnAndRefund_id' =>$newReturnId,
+            
             'order_id'           =>$order_id,
             'customer_id'        =>$customer->user_id,
             'reason'             =>$request->reason,

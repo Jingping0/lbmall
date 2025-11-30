@@ -28,12 +28,14 @@ class PaypalController extends Controller
             'purchase_units' => [
                 [
                     'amount' => [
-                        'currency_code' => 'MYR',
+                        'currency_code' => 'USD',
                         'value' => $request->price
                     ],
                 ],
             ],
         ]);
+
+       
 
         
         if(isset($response['id']) && $response['id'] != null){
