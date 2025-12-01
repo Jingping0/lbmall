@@ -235,7 +235,7 @@ class OrderController extends Controller
         $payment = Payment::where("order_id",$order->order_id);
         $orderDetail = OrderDetail::where("order_id",$order->order_id);
 
-        // Mail::to('chiangjs-wm20@student.tarc.edu.my')->send(new MyTestMail($data));
+        // Mail::to('chiangjp-wm22@student.tarc.edu.my')->send(new MyTestMail($data));
         Mail::to($order->customer->email)->send(new OrderReceipt($order,$payment,$orderDetail));
 
 
