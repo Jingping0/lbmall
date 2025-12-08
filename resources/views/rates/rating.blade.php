@@ -3,12 +3,13 @@
     <head>
         <title>LB | Product</title>
         <link rel="icon" href="image/small_logo.png">
+        <!-- 用稳定的 FA CSS（替换你现有 kit 脚本） -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="{{ asset('css/rating.css') }}">
         <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
         <!-- fontawesome -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -19,7 +20,7 @@
     <!-- header -->
     <section class="header">
         <nav>
-            <a href="home.html"><img src="image/small_logo.png"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('img/small_logo.png') }}"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-window-close-o" onclick="hideMenu()"></i>
                 <ul>
@@ -57,79 +58,9 @@
                 <div class="rating_text_container">
                     <h1 class="rating_text">Rate Product</h1>
                 </div>
-                <div class="container">
-                    
-                    <div class="gallery-container w-4 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://source.unsplash.com/1600x900/?Mirror" alt="Mirror"></a>
-                            </div>
-                        </div>
-                    </div>
                 
-                    <div class="gallery-container w-2 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <img src="https://source.unsplash.com/1600x900/?wardrobe" alt="wardrobe">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="gallery-container w-3 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <a href="category/bedpage.html"><img src="https://source.unsplash.com/1600x900/?bed" alt="bed"></a>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="gallery-container w-3 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <img src="https://source.unsplash.com/1600x900/?dinnerware" alt="tableware">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="gallery-container w-2 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <img src="https://source.unsplash.com/1600x900/?mirror" alt="sofa">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="gallery-container w-2 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <img src="https://source.unsplash.com/1600x900/?swiver chair" alt="chair">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="gallery-container w-2 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <a href="category/tablepage.html"><img src="https://source.unsplash.com/1600x900/?table" alt="table"></a>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="gallery-container w-6 h-1">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <img src="https://source.unsplash.com/1600x900/?plant pot" alt="plant pot">
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
 
             <div class="right_container">
-               
-                    
-               
                 
                 <div class="rating_product_container">
                     <div class="rating_product_grid">
@@ -156,7 +87,7 @@
                                 <div class="items_quantity">
                                     <p class="quantity_text">
                                         Qty:
-                                        <span class="quantity_number">{{ $product_item->quantity }}</span>
+                                        <span class="quantity_number">{{ $orderQuantity ?? $product_item->quantity ?? 0 }}</span>
                                     </p>
                                 </div>
                             </div>

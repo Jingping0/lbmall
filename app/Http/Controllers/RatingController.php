@@ -18,31 +18,46 @@ class RatingController extends Controller
 {
     public function updateRating($product_item_id)
     {
-        
-        $product_item = ProductItem::find($product_item_id);
-        $customer = $this->getCurrentCustomer();
-        
-    
-        $orderDetails = OrderDetail::where('product_item_id', $product_item_id)
-            ->pluck('order_id')
-            ->toArray();
+        // 找到商品
+        $product_item = ProductItem::findOrFail($product_item_id);
 
-           
-    
-        $rating = Rating::whereIn('order_id', $orderDetails)
-            ->where('customer_id', $customer->user_id)
-            ->where('product_item_id', $product_item_id)
-            ->latest('created_at') 
+        // 取得目前登入的 customer（若沒有則回到上一頁）
+        $customer = $this->getCurrentCustomer();
+        if (! $customer) {
+            return redirect()->back()->with('error', 'Please log in to rate this product.');
+        }
+
+        // 找出該客戶包含這個 product_item 的最近一筆 order_detail（使用 join，避免 model 關聯缺失）
+        $orderDetail = OrderDetail::join('orders', 'order_details.order_id', '=', 'orders.order_id')
+            ->where('order_details.product_item_id', $product_item_id)
+            ->where('orders.customer_id', $customer->user_id)
+            ->orderBy('order_details.created_at', 'desc')
+            ->select('order_details.*')
             ->first();
 
-            
-            
+        $orderQuantity = $orderDetail ? (int) $orderDetail->quantity : null;
 
-    
-        // Pass the retrieved data to the view
-        return view('rates.rating', compact('product_item', 'rating'));
+        // 取得該客戶對此商品的 rating（若沒有則傳入空模型）
+        $orderIds = OrderDetail::where('product_item_id', $product_item_id)->pluck('order_id')->toArray();
+
+        $rating = Rating::whereIn('order_id', $orderIds)
+            ->where('customer_id', $customer->user_id)
+            ->where('product_item_id', $product_item_id)
+            ->latest('created_at')
+            ->first();
+
+        if (! $rating) {
+            $rating = new Rating(); // 保證視圖能安全訪問 $rating
+        }
+
+        // 在找到 $rating 之后加一个保护
+        if ($rating && $rating->rating_status === 'rate') {
+            return redirect()->back()->with('error', 'You have already rated this item.');
+        }
+
+        // 傳入 orderQuantity 供視圖顯示
+        return view('rates.rating', compact('product_item', 'rating', 'orderQuantity'));
     }
-    
     
 
     public function updateRatingPost(Request $request ,$rating_id)

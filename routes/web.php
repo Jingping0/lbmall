@@ -194,12 +194,14 @@ Route::put('/editCustomerService/{cust_service_id}',[CustomerServiceController::
 
 
 ///////////////////// LiveChat ///////////////////////////
-Route::get('/liveChat',[PusherController::class,'index'])->name('pusher.index');
-Route::post('/broadcast',[PusherController::class,'broadcast'])->name('pusher.broadcast');
-Route::post('/receive',[PusherController::class,'receive'])->name('pusher.receive');
-
-Route::get('/chat', [PusherController::class, 'index']);
-Route::post('/chat/send', [PusherController::class, 'send']);
+Route::middleware('auth')->group(function () {
+    Route::get('/liveChat',[PusherController::class,'index'])->name('pusher.index');
+    Route::post('/broadcast',[PusherController::class,'broadcast'])->name('pusher.broadcast');
+    Route::post('/receive',[PusherController::class,'receive'])->name('pusher.receive');
+    Route::get('/chat', [PusherController::class, 'index']);
+    Route::post('/chat/send', [PusherController::class, 'send']);
+    Route::get('/chat/history', [PusherController::class, 'getHistory'])->name('chat.history');
+});
 
 
 
