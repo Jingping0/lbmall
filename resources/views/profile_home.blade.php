@@ -21,7 +21,7 @@
             <div class="card_container">
                 <div class="card_content">
                     <h1>Welcome home to your LB's profile</h1>
-                    Here is your own cosy corner of IKEA where you can update your info.
+                    Here is your own cosy corner of LB where you can update your info.
                 </div>
             </div>
         </div>
