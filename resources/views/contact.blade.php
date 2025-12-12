@@ -87,65 +87,7 @@
     </script>
     @endif
     <body>
-        <section class="header">
-            <nav>
-                <a href="{{ route('home') }}"><img src="{{ asset('img/small_logo.png') }}"></a>
-                <div class="nav-links" id="navLinks">
-                    <i class="fa fa-window-close-o" onclick="hideMenu()"></i>
-                    <ul>
-                        <li><a href="{{ route('home') }}">HOME</a></li>
-    
-                        <li><div class="dropdown" data-dropdown>
-                            <a href="{{ route('product_items.index') }}">PRODUCT</a>
-                               
-                        </li>
-                        <li><a href="{{ route('about_us') }}">ABOUT US</a></li>
-                        <li><a href="{{ route('contact') }}">CONTACT US</a></li>
-                        <li>
-                            <input type="search" id="search" class="form-control-nav form-control-dark" placeholder="Search..." aria-label="Search" autocomplete="off">
-                            <div class="search-menu" id="search-menu">
-    
-                            </div>
-                        </li>
-                        <li><div class="cart-icon"><a href="{{ route('getWishList') }}"><i class="fas fa-solid fa-heart" style="font-size: 1.6em;"></i></a></div></li>
-                        <li><div class="cart-icon"><a href="{{ route('getWishList') }}"><i class="fas fa-solid fa-truck"></i></a></div></li>
-                        <li><div class="cart-icon"><a href="{{ route('order.getStatusOrder') }}"><i class="fas fa-shopping-cart fa-"></i></a></div></li>
-                        <li><div class="cart-icon"><a href="{{ route('customerProfile') }}"><i class="fas fa-solid fa-user"></i></a></div></li>
-                        <li>
-                            <div class="action">
-                                <div class="profile" onclick="menuToggle();">
-                                    @php
-                                $user = auth()->user();
-
-                                $customer = $user?->customer;
-
-                                $userImage = $customer?->userImage?ltrim($customer->userImage,'/'):null;
-
-                                $path = $userImage?storage_path('app/public/' . $userImage):null;
-                                
-                                $ver = $path && file_exists($path) ? filemtime($path) : time();
-
-                                @endphp
-
-                                <img class="img" alt="user" width="100" src="{{ $userImage && file_exists($path) ? asset('storage/'.$userImage) . '?v=' . $ver : asset('img/user.png') }}">
-                                </div>
-    
-                                <div class="menu">
-                                    <h3>
-                                        <br>
-                                    </h3>
-                                    <ul>
-                                        <li><i class="fas fa-user-alt"><a href="ViewCustomerProfile">Profile</a></i></li>
-                                        <li><i class="fas fa-sticky-note"><a href="GetCustomerOrders">Orders</a></i></li>
-                                        <li><i class="fas fa-sign-out-alt"><a href="Logout">Logout</a></i></li>
-                                        <li><i class="fas fa-sign-out-alt"><a href="{{ route('login') }}">Login</a></i></li> 
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        @include('layout.subNav')
 
             <div class="contactUs">
                 <div class="title">

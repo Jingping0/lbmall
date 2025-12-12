@@ -24,7 +24,7 @@
                     Here is your own cosy corner of LB where you can update your info.
                 </div>
             </div>
-        </div>
+        </div>     
 
         <div class="container_right">
             <h2>Your profile</h2>
