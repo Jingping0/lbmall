@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>YEEKIA | Live Chat</title>
+  <title>LB | Live Chat</title>
   <link rel="icon" href="https://assets.edlin.app/favicon/favicon.ico"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 

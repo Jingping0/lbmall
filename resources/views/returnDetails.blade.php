@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>YEEKIA | Return And Refund</title>
+    <title>LB | Return And Refund</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="{{ asset('css/returnDetails.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
